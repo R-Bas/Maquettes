@@ -18,9 +18,16 @@ class Menu < Gtk::Window
 		boxVerticale.add(Gtk::Button.new(label: "Aventure"))
 		boxVerticale.add(Gtk::Button.new(label: "Classement"))
 
-		c = Gtk::Box.new(Gtk::Orientation.new(0), 0)
-		c.add(Gtk::Button.new(label: "Retour"))
-		boxVerticale.add(c)
+		boxHorizontale = Gtk::Box.new(Gtk::Orientation.new(0), 0)
+		boxHorizontale.homogeneous = true
+		c = Gtk::Button.new(label: "Deconnexion")
+		boxHorizontale.add(c)
+		c = Gtk::Label.new("")
+		c.hexpand = true
+		boxHorizontale.add(c)
+		c = Gtk::Button.new(label: "Quitter")
+		boxHorizontale.add(c)
+		boxVerticale.add(boxHorizontale)
 	end
 end
 
