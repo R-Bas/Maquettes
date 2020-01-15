@@ -6,7 +6,7 @@ class Aventure < Gtk::Window
 		super("Mode Aventure")
 		self.set_default_size(300, 300)
 
-		image = Gtk::Image.new(:file => "Ressources/map.png")
+		image = Gtk::Image.new(:file => "Ressources/am.png")
 		self.add(image)
 	end
 end
