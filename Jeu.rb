@@ -3,7 +3,7 @@ require "gtk3"
 class Jeu < Gtk::Window
 
 	def initialize()
-		super("Fenêtre de Jeu")
+		super("Hashi")
 		#provider = Gtk::CssProvider.new()
 		#provider.load_from_data(".frame{border:10px solid red;}");
 		#Gtk::StyleContext.add_provider_for_screen(Gdk::Screen.default, provider, Gtk::StyleProvider::PRIORITY_APPLICATION)
@@ -25,15 +25,22 @@ class Jeu < Gtk::Window
 		boxVerticale.add(c)
 		c = Gtk::Button.new(:label => "Refaire")
 		boxVerticale.add(c)
-		c = Gtk::Button.new(:label => "Aide")
+		c = Gtk::Button.new(:label => "Vérification")
 		boxVerticale.add(c)
 		c = Gtk::Button.new(:label => "Hypothèse")
 		boxVerticale.add(c)
-		c = Gtk::Label.new("Aide")
-		c.margin_top = 15
-		c.vexpand = true
-		boxVerticale.add(c)
-		c = Gtk::Button.new(:label => "Règles")
+		box = Gtk::Box.new(Gtk::Orientation.new(1), 0)
+		box.margin_top = 15
+		box.vexpand = true
+		box.add(Gtk::Label.new("Aide :"))
+		box.add(Gtk::Button.new(:label => "Position"))
+		box.add(Gtk::Button.new(:label => "Technique"))
+		c = Gtk::Label.new("Il y a un 3 dans la grille avec seulement 2 voisins, vous pouvez le relier avec un trait à chacun des deux voisins")
+		c.line_wrap = true;
+		c.margin_top = 20
+		box.add(c)
+		boxVerticale.add(box)
+		c = Gtk::Button.new(:label => "Pause")
 		boxVerticale.add(c)
 
 		pan.add1(grille)

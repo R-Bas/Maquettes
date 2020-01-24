@@ -4,7 +4,7 @@ require_relative "ListeClassement"
 class Classement < Gtk::Window
 
 	def initialize()
-		super("Classement")
+		super("Hashi")
 		self.set_default_size(300, 300)
 
 		boxVerticale = Gtk::Box.new(Gtk::Orientation.new(1), 0)

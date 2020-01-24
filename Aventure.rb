@@ -3,7 +3,7 @@ require "gtk3"
 class Aventure < Gtk::Window
 
 	def initialize()
-		super("Mode Aventure")
+		super("Hashi")
 		self.set_default_size(300, 300)
 
 		image = Gtk::Image.new(:file => "map.png")

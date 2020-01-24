@@ -4,7 +4,7 @@ require_relative "SelectionGrille"
 class Selection < Gtk::Window
 
 	def initialize()
-		super("Selection difficulté")
+		super("Hashi")
 		self.set_default_size(300, 300)
 
 		boxHorizontale = Gtk::Box.new(Gtk::Orientation.new(0), 0)
@@ -18,18 +18,7 @@ class Selection < Gtk::Window
 		boxHorizontale.add(stackDif)
 
 		["Facile", "Moyen", "Difficile"].each() do |dif|
-			boxH = Gtk::Box.new(Gtk::Orientation.new(0), 0)
-			stackTaille = Gtk::Stack.new()
-			sideTaille = Gtk::StackSidebar.new()
-			sideTaille.stack = stackTaille
-			["Taille 1", "Taille 2", "Taille 3"].each() do |taille|
-				grilles = SelectionGrille.new()
-				grilles.expand = true
-				stackTaille.add_titled(grilles, taille, taille)
-			end
-			boxH.add(sideTaille)
-			boxH.add(stackTaille)
-			stackDif.add_titled(boxH, dif, dif)
+			stackDif.add_titled(SelectionGrille.new(), dif, dif)
 		end
 	end
 end
