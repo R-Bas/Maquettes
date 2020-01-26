@@ -35,10 +35,10 @@ class Jeu < Gtk::Window
 		box.add(Gtk::Label.new("Aide :"))
 		box.add(Gtk::Button.new(:label => "Position"))
 		box.add(Gtk::Button.new(:label => "Technique"))
-		c = Gtk::Label.new("Il y a un 3 dans la grille avec seulement 2 voisins, vous pouvez le relier avec un trait à chacun des deux voisins")
-		c.line_wrap = true;
-		c.margin_top = 20
-		box.add(c)
+		#c = Gtk::Label.new("Il y a un 3 dans la grille avec seulement 2 voisins, vous pouvez le relier avec un trait à chacun des deux voisins")
+		#c.line_wrap = true;
+		#c.margin_top = 20
+		#box.add(c)
 		boxVerticale.add(box)
 		c = Gtk::Button.new(:label => "Pause")
 		boxVerticale.add(c)
