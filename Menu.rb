@@ -16,7 +16,7 @@ class Menu < Gtk::Window
 		boxHorizontale.homogeneous = true
 		boxHorizontale.spacing = 10
 		boxHorizontale.margin_bottom = 12
-		boxHorizontale.add(Gtk::Button.new(label: "Règles"))
+		boxHorizontale.add(Gtk::Button.new(label: "Didacticiel"))
 		boxHorizontale.add(Gtk::Button.new(label: "Classement"))
 		boxVerticale.add(boxHorizontale)
 
